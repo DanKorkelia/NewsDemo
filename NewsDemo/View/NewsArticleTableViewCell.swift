@@ -18,14 +18,12 @@ class NewsArticleTableViewCell: UITableViewCell {
     func updateCell(with headlines: Source.Article) {
         sourceLabel.text = headlines.source.name
         headlineLabel.text = headlines.title
-        
-        ///default image in case of error or missing image.
-        let errorURL = URL(string: "https://developers.google.com/maps/documentation/streetview/images/error-image-generic.png")
-        
-        DispatchQueue.global(qos: .background).async {
+                
+            DispatchQueue.global(qos: .userInitiated).async {
             let data = try? Data(contentsOf: headlines.urlToImage ?? errorURL! )
-            DispatchQueue.main.async {
-                self.imageLabel.image = UIImage(data: data!)
+                let myimage = UIImage(data: data!)
+            DispatchQueue.main.sync {
+                self.imageLabel.image = myimage
             }
         }
     }

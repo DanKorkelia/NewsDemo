@@ -13,7 +13,7 @@ class NewsViewController: UIViewController {
     @IBOutlet weak var newsArticlesTableView: UITableView!
     
     var articles = [Source.Article]()
-//    let fetchData = FetchData()
+    //let fetchData = FetchData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,11 @@ class NewsViewController: UIViewController {
         loadData()
     }
     
+    @IBAction func shareSheet(_ sender: UIBarButtonItem) {
+        activeShareSheet()
+    }
+    
+    
     fileprivate func loadData() {
         getResults(from: API.topHeadlimesFromSource()! ) {
             DispatchQueue.main.async {
@@ -34,12 +39,35 @@ class NewsViewController: UIViewController {
         }
     }
     
+    func activeShareSheet() {
+        let activity = UIActivityViewController(activityItems: [makeList()], applicationActivities: [])
+        activity.popoverPresentationController?.sourceView = self.view
+        
+        activity.excludedActivityTypes = [UIActivity.ActivityType.postToFacebook, UIActivity.ActivityType.postToTwitter, UIActivity.ActivityType.openInIBooks, UIActivity.ActivityType.mail]
+        present(activity, animated: true)
+    }
+    
+    /// This helps format the output of the array to fit Notes and Messages App.
+    func makeList() -> String {
+        var list = """
+        Top 10 Headlines
+
+        """
+        
+        var counter = 1
+        for article in articles {
+            list.append("\(counter) - " + "\(article.title!) " + "\(article.author!)" + "\n")
+            counter += 1
+        }
+        return list
+    }
+    
+    
     //MARK: - Networking
-    let decoder = JSONDecoder()
-    
-    var errorMessage = ""
-    
     fileprivate func updateResults(_ data: Data) {
+        let decoder = JSONDecoder()
+        var errorMessage = ""
+        
         decoder.dateDecodingStrategy = .iso8601
         articles.removeAll()
         do {
@@ -70,7 +98,6 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "News Article Cell") as! NewsArticleTableViewCell
-        
         let article = articles[indexPath.row]
         cell.updateCell(with: article)
         return cell

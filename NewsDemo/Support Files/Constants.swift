@@ -25,18 +25,7 @@ struct API {
         case publishedAt //newest articles come first.
     }
     
-    //Some date formatting shit
-    //    let date = Date()
-    //    let dateFormatter = DateFormatter()
-    //
-    //    func configDate() -> String {
-    //        dateFormatter.dateFormat = "yyyy-MM-dd"
-    //        let result = dateFormatter.string(from: date)
-    //        return "\(result)"
-    //    }
-    
     //API Query Parameters
-    /// Needs variables that will store the values so they can be changed
     static let search = URLQueryItem(name: "q", value: "uber")
     static let fromDate = URLQueryItem(name: "from", value: "2018-07-17")  // needs to be converted to Date
     static let toDate = URLQueryItem(name: "to", value: "2018-07-18") // needs to be converted to Date
@@ -44,7 +33,7 @@ struct API {
     static let language = URLQueryItem(name: "language", value: "en")
     static let country = URLQueryItem(name: "country", value: "de")
     static let category = URLQueryItem(name: "category", value: "business")
-    static let pageSize = URLQueryItem(name: "pageSize", value: "5")
+    static let pageSize = URLQueryItem(name: "pageSize", value: "20")
     static let sourcesName = URLQueryItem(name: "sources", value: "business-insider")
 //    static let sourcesName = URLQueryItem(name: "sources", value: "bbc-news") ///needs custom list
     
@@ -73,3 +62,6 @@ struct API {
         return API.everythingUrl?.url
     }
 }
+
+///default image in case of error or missing image.
+let errorURL = URL(string: "https://developers.google.com/maps/documentation/streetview/images/error-image-generic.png")

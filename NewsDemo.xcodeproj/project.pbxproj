@@ -66,7 +66,6 @@
 				58CA5003214A7D3700353E3C /* Model */,
 				58CA4FFC214A785000353E3C /* View */,
 				58CA4FFD214A785A00353E3C /* ViewController */,
-				58CA4FFF214A7C8500353E3C /* FetchData.swift */,
 				58CA4FEC214A76F900353E3C /* Main.storyboard */,
 				58CA4FEF214A76FB00353E3C /* Assets.xcassets */,
 				58CA4FF1214A76FB00353E3C /* LaunchScreen.storyboard */,
@@ -94,6 +93,7 @@
 		58CA4FFE214A786400353E3C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				58CA4FFF214A7C8500353E3C /* FetchData.swift */,
 				58CA4FE8214A76F900353E3C /* AppDelegate.swift */,
 				58CA5004214A857F00353E3C /* Constants.swift */,
 			);
@@ -333,6 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z8XR48Z685;
 				INFOPLIST_FILE = NewsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,6 +352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z8XR48Z685;
 				INFOPLIST_FILE = NewsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

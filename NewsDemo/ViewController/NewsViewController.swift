@@ -17,7 +17,7 @@ class NewsViewController: UIViewController {
     
     //MARK: - Constants
     var currentSource = ""
-    let sourceOne = "abc-news"
+    let sourceOne = "the-verge"
     let sourceTwo = "techcrunch"
     
     override func viewDidLoad() {

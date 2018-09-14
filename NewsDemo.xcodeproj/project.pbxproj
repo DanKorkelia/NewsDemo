@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		583EBAA2214BC088001123B6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		58CA4FE5214A76F900353E3C /* NewsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58CA4FE8214A76F900353E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58CA4FEA214A76F900353E3C /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 				58CA4FEF214A76FB00353E3C /* Assets.xcassets */,
 				58CA4FF1214A76FB00353E3C /* LaunchScreen.storyboard */,
 				58CA4FF4214A76FB00353E3C /* Info.plist */,
+				583EBAA2214BC088001123B6 /* README.md */,
 			);
 			path = NewsDemo;
 			sourceTree = "<group>";

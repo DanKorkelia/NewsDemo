@@ -36,7 +36,6 @@ class NewsViewController: UIViewController {
     @IBAction func refreshTable(_ sender: UIBarButtonItem) {
         loadData(source: currentSource)
     }
-    
     @IBAction func shareSheet(_ sender: UIBarButtonItem) {
         activeShareSheet()
     }

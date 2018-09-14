@@ -13,7 +13,7 @@
 		58CA4FF0214A76FB00353E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58CA4FEF214A76FB00353E3C /* Assets.xcassets */; };
 		58CA4FF3214A76FB00353E3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58CA4FF1214A76FB00353E3C /* LaunchScreen.storyboard */; };
 		58CA4FFB214A784900353E3C /* NewsArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA4FFA214A784900353E3C /* NewsArticleTableViewCell.swift */; };
-		58CA5000214A7C8500353E3C /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA4FFF214A7C8500353E3C /* FetchData.swift */; };
+		58CA5000214A7C8500353E3C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA4FFF214A7C8500353E3C /* NetworkService.swift */; };
 		58CA5002214A7D3200353E3C /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA5001214A7D3200353E3C /* NewsModel.swift */; };
 		58CA5005214A857F00353E3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA5004214A857F00353E3C /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -27,7 +27,7 @@
 		58CA4FF2214A76FB00353E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58CA4FF4214A76FB00353E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58CA4FFA214A784900353E3C /* NewsArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleTableViewCell.swift; sourceTree = "<group>"; };
-		58CA4FFF214A7C8500353E3C /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
+		58CA4FFF214A7C8500353E3C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		58CA5001214A7D3200353E3C /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		58CA5004214A857F00353E3C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +93,7 @@
 		58CA4FFE214A786400353E3C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				58CA4FFF214A7C8500353E3C /* FetchData.swift */,
+				58CA4FFF214A7C8500353E3C /* NetworkService.swift */,
 				58CA4FE8214A76F900353E3C /* AppDelegate.swift */,
 				58CA5004214A857F00353E3C /* Constants.swift */,
 			);
@@ -181,7 +181,7 @@
 			files = (
 				58CA4FEB214A76F900353E3C /* NewsViewController.swift in Sources */,
 				58CA4FFB214A784900353E3C /* NewsArticleTableViewCell.swift in Sources */,
-				58CA5000214A7C8500353E3C /* FetchData.swift in Sources */,
+				58CA5000214A7C8500353E3C /* NetworkService.swift in Sources */,
 				58CA4FE9214A76F900353E3C /* AppDelegate.swift in Sources */,
 				58CA5002214A7D3200353E3C /* NewsModel.swift in Sources */,
 				58CA5005214A857F00353E3C /* Constants.swift in Sources */,

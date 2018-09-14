@@ -10,20 +10,31 @@ import UIKit
 
 class NewsViewController: UIViewController {
     
-    @IBOutlet weak var newsArticlesTableView: UITableView!
+    //MARK: - Properties
+    @IBOutlet weak var articlesTable: UITableView!
+    var articles: [Article] = []
+    let networkService = NetworkService()
     
-    var articles = [Source.Article]()
-    //let fetchData = FetchData()
+    //MARK: - Constants
+    var currentSource = ""
+    let bbc = "bbc-news"
+    let techcrunch = "techcrunch"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsArticlesTableView.delegate = self
-        newsArticlesTableView.dataSource = self
-        loadData()
+        articlesTable.delegate = self
+        articlesTable.dataSource = self
+        loadData(source: bbc)
     }
     
+    @IBAction func loadTechCrunch(_ sender: UIBarButtonItem) {
+        loadData(source: techcrunch)
+    }
+    @IBAction func loadBBC(_ sender: UIBarButtonItem) {
+        loadData(source: bbc)
+    }
     @IBAction func refreshTable(_ sender: UIBarButtonItem) {
-        loadData()
+        loadData(source: currentSource)
     }
     
     @IBAction func shareSheet(_ sender: UIBarButtonItem) {
@@ -31,12 +42,16 @@ class NewsViewController: UIViewController {
     }
     
     
-    fileprivate func loadData() {
-        getResults(from: API.topHeadlimesFromSource()! ) {
-            DispatchQueue.main.async {
-                self.newsArticlesTableView.reloadData()
+    fileprivate func loadData(source: String) {
+        currentSource = source
+        networkService.getResults(newsSource: source) { results, errorMessage in
+            if let results = results {
+                self.articles = results
+                self.articlesTable.reloadData()
             }
+            if !errorMessage.isEmpty { print("Error message: " + errorMessage) }
         }
+        
     }
     
     func activeShareSheet() {
@@ -60,31 +75,6 @@ class NewsViewController: UIViewController {
             counter += 1
         }
         return list
-    }
-    
-    
-    //MARK: - Networking
-    fileprivate func updateResults(_ data: Data) {
-        let decoder = JSONDecoder()
-        var errorMessage = ""
-        
-        decoder.dateDecodingStrategy = .iso8601
-        articles.removeAll()
-        do {
-            let rawFeed = try decoder.decode(Source.self, from: data)
-            articles = rawFeed.articles
-        } catch let decodeError as NSError {
-            errorMessage += "Decoder error: \(decodeError.localizedDescription)"
-            return
-        }
-    }
-    
-    func getResults(from url: URL, completion: @escaping () -> () ) {
-        URLSession.shared.dataTask(with: url) { (data, response, error ) in
-            guard let data = data else { return }
-            self.updateResults(data)
-            completion()
-            }.resume()
     }
     
 }

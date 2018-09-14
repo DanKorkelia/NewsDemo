@@ -15,7 +15,7 @@ class NewsArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var imageLabel: UIImageView!
     
-    func updateCell(with headlines: Source.Article) {
+    func updateCell(with headlines: Article) {
         sourceLabel.text = headlines.source.name
         headlineLabel.text = headlines.title
                 

@@ -17,21 +17,21 @@ class NewsViewController: UIViewController {
     
     //MARK: - Constants
     var currentSource = ""
-    let bbc = "bbc-news"
-    let techcrunch = "techcrunch"
+    let sourceOne = "abc-news"
+    let sourceTwo = "techcrunch"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         articlesTable.delegate = self
         articlesTable.dataSource = self
-        loadData(source: bbc)
+        loadData(source: sourceOne)
     }
     
     @IBAction func loadTechCrunch(_ sender: UIBarButtonItem) {
-        loadData(source: techcrunch)
+        loadData(source: sourceTwo)
     }
     @IBAction func loadBBC(_ sender: UIBarButtonItem) {
-        loadData(source: bbc)
+        loadData(source: sourceOne)
     }
     @IBAction func refreshTable(_ sender: UIBarButtonItem) {
         loadData(source: currentSource)

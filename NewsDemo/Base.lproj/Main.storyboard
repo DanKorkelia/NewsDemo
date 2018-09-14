@@ -23,14 +23,14 @@
                                 <items>
                                     <navigationItem title="News" largeTitleDisplayMode="always" id="xME-Ph-jmq">
                                         <leftBarButtonItems>
-                                            <barButtonItem title="TechCrunch" style="done" id="Qnz-CI-QQF">
-                                                <connections>
-                                                    <action selector="loadTechCrunch:" destination="BYZ-38-t0r" id="1XI-lA-LHW"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem title="BBC" style="done" id="PdP-Af-NVR">
+                                            <barButtonItem title="One" style="done" id="PdP-Af-NVR">
                                                 <connections>
                                                     <action selector="loadBBC:" destination="BYZ-38-t0r" id="Pu9-5p-n1D"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Two" style="done" id="Qnz-CI-QQF">
+                                                <connections>
+                                                    <action selector="loadTechCrunch:" destination="BYZ-38-t0r" id="1XI-lA-LHW"/>
                                                 </connections>
                                             </barButtonItem>
                                         </leftBarButtonItems>
@@ -53,7 +53,7 @@
                                 <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="News Article Cell" rowHeight="128" id="KvZ-q8-GSt" customClass="NewsArticleTableViewCell" customModule="NewsDemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="News Article Cell" rowHeight="128" id="KvZ-q8-GSt" customClass="NewsArticleTableViewCell" customModule="NewsDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KvZ-q8-GSt" id="QZc-kM-DeP">

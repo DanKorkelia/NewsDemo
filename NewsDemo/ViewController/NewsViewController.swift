@@ -19,18 +19,25 @@ class NewsViewController: UIViewController {
     var currentSource = ""
     let sourceOne = "the-verge"
     let sourceTwo = "techcrunch"
+    let pageSize = "20"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         articlesTable.delegate = self
         articlesTable.dataSource = self
         loadData(source: sourceOne)
+        sharedUserDefaults?.setSource(value: sourceOne)
+        sharedUserDefaults?.synchronize()
     }
     
-    @IBAction func loadTechCrunch(_ sender: UIBarButtonItem) {
+    @IBAction func setSourceTwo(_ sender: UIBarButtonItem) {
+        sharedUserDefaults?.setSource(value: sourceTwo)
+        sharedUserDefaults?.synchronize()
         loadData(source: sourceTwo)
     }
-    @IBAction func loadBBC(_ sender: UIBarButtonItem) {
+    @IBAction func setSourceOne(_ sender: UIBarButtonItem) {
+        sharedUserDefaults?.setSource(value: sourceOne)
+        sharedUserDefaults?.synchronize()
         loadData(source: sourceOne)
     }
     @IBAction func refreshTable(_ sender: UIBarButtonItem) {
@@ -43,14 +50,14 @@ class NewsViewController: UIViewController {
     
     fileprivate func loadData(source: String) {
         currentSource = source
-        networkService.getResults(newsSource: source) { results, errorMessage in
+        
+        networkService.getResults(newsSource: source, pageSize: pageSize) { results, errorMessage in
             if let results = results {
                 self.articles = results
                 self.articlesTable.reloadData()
             }
             if !errorMessage.isEmpty { print("Error message: " + errorMessage) }
         }
-        
     }
     
     func activeShareSheet() {

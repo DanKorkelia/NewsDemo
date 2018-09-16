@@ -27,12 +27,12 @@ class NetworkService {
     
     
     //MARK: - Fetch Data
-    func getResults(newsSource: String, completion: @escaping QueryResult) {
+    func getResults(newsSource: String, pageSize: String, completion: @escaping QueryResult) {
         dataTask?.cancel()
         
         guard var urlComponents = URLComponents(string: "https://newsapi.org/v2/top-headlines?") else { return }
         
-        urlComponents.query = "sources=\(newsSource)&pageSize=20&apiKey=debbf0c53d1a453d86c219dbde1932c1"
+        urlComponents.query = "sources=\(newsSource)&\(pageSize)&apiKey=debbf0c53d1a453d86c219dbde1932c1"
         guard let url = urlComponents.url else { return }
         
         dataTask = defaultSession.dataTask(with: url) { data, response, error in

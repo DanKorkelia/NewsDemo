@@ -10,3 +10,6 @@ import Foundation
 
 ///default image in case of error or missing image.
 let errorURL = URL(string: "https://developers.google.com/maps/documentation/streetview/images/error-image-generic.png")
+
+//Singleton For accessing UserDefaults storage
+let sharedUserDefaults = UserDefaults(suiteName: "group.sharingNews")

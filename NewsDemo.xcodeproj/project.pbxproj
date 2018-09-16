@@ -115,6 +115,7 @@
 		58CA4FDC214A76F900353E3C = {
 			isa = PBXGroup;
 			children = (
+				583EBAA2214BC088001123B6 /* README.md */,
 				58CA4FE7214A76F900353E3C /* NewsDemo */,
 				584F5E7F214C7A590020C9C8 /* TopHeadline */,
 				584F5E7C214C7A590020C9C8 /* Frameworks */,
@@ -143,7 +144,6 @@
 				58CA4FEF214A76FB00353E3C /* Assets.xcassets */,
 				58CA4FF1214A76FB00353E3C /* LaunchScreen.storyboard */,
 				58CA4FF4214A76FB00353E3C /* Info.plist */,
-				583EBAA2214BC088001123B6 /* README.md */,
 			);
 			path = NewsDemo;
 			sourceTree = "<group>";

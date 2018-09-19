@@ -11,8 +11,8 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
-    var articles: [Article] = []
-    let networkService = NetworkService()
+    private var articles: [Article] = []
+    private let networkService = NetworkService()
     
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var headlineLabel: UILabel!
@@ -23,12 +23,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // Do any additional setup after loading the view from its nib.
     }
     
-    func hideLabels() {
+    fileprivate func hideLabels() {
         sourceLabel.alpha = 0.0
         headlineLabel.alpha = 0.0
         imageLabel.alpha = 0.0
     }
-    func showLabels() {
+    fileprivate func showLabels() {
         sourceLabel.alpha = 1.0
         headlineLabel.alpha = 1.0
         imageLabel.alpha = 1.0

@@ -16,10 +16,10 @@ class NewsViewController: UIViewController {
     let networkService = NetworkService()
     
     //MARK: - Constants
-    var currentSource = ""
-    let sourceOne = "the-verge"
-    let sourceTwo = "techcrunch"
-    let pageSize = "20"
+    private var currentSource = ""
+    private let sourceOne = "the-verge"
+    private let sourceTwo = "techcrunch"
+    private let pageSize = "20"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,16 +60,18 @@ class NewsViewController: UIViewController {
         }
     }
     
-    func activeShareSheet() {
+    //MARK: - Activity Sheet
+    fileprivate func activeShareSheet() {
         let activity = UIActivityViewController(activityItems: [makeList()], applicationActivities: [])
         activity.popoverPresentationController?.sourceView = self.view
         
         activity.excludedActivityTypes = [UIActivity.ActivityType.postToFacebook, UIActivity.ActivityType.postToTwitter, UIActivity.ActivityType.openInIBooks, UIActivity.ActivityType.mail]
+        
         present(activity, animated: true)
     }
     
-    /// This helps format the output of the array to fit Notes and Messages App.
-    func makeList() -> String {
+    /// This helps format the output to look nicer with Notes App.
+    fileprivate func makeList() -> String {
         var list = """
         Top 10 Headlines
 
@@ -81,6 +83,7 @@ class NewsViewController: UIViewController {
             counter += 1
         }
         return list
+    
     }
     
 }
@@ -99,3 +102,4 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 }
+

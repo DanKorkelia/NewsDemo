@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		580EF02E2151808000AD33E9 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA5001214A7D3200353E3C /* NewsModel.swift */; };
 		584F5E7E214C7A590020C9C8 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584F5E7D214C7A590020C9C8 /* NotificationCenter.framework */; };
 		584F5E81214C7A590020C9C8 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584F5E80214C7A590020C9C8 /* TodayViewController.swift */; };
 		584F5E84214C7A590020C9C8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 584F5E82214C7A590020C9C8 /* MainInterface.storyboard */; };
@@ -20,7 +21,6 @@
 		58CA5000214A7C8500353E3C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA4FFF214A7C8500353E3C /* NetworkService.swift */; };
 		58CA5002214A7D3200353E3C /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA5001214A7D3200353E3C /* NewsModel.swift */; };
 		58CA5005214A857F00353E3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA5004214A857F00353E3C /* Constants.swift */; };
-		58E2C053214D4291003AC222 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA5001214A7D3200353E3C /* NewsModel.swift */; };
 		58E2C055214D42A2003AC222 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CA4FFF214A7C8500353E3C /* NetworkService.swift */; };
 		58E2C057214D7044003AC222 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E2C056214D7044003AC222 /* UserDefaults.swift */; };
 		58E2C058214D7044003AC222 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E2C056214D7044003AC222 /* UserDefaults.swift */; };
@@ -297,9 +297,9 @@
 			files = (
 				58E2C059214D7750003AC222 /* Constants.swift in Sources */,
 				58E2C058214D7044003AC222 /* UserDefaults.swift in Sources */,
-				58E2C053214D4291003AC222 /* NewsModel.swift in Sources */,
 				58E2C055214D42A2003AC222 /* NetworkService.swift in Sources */,
 				584F5E81214C7A590020C9C8 /* TodayViewController.swift in Sources */,
+				580EF02E2151808000AD33E9 /* NewsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

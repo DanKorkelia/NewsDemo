@@ -1,5 +1,7 @@
 #  News Demo App
 
+## Please get your own API Key at [https://newsapi.org](https://newsapi.org)
+
 ### Project Purpose
 News Demo app was created for [iOS London Meetup group](https://www.meetup.com/ioslondon/) presentation held on 18th of Spetember 2018.
 

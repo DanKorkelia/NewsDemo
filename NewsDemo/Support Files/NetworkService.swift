@@ -15,6 +15,9 @@ class NetworkService {
     var articles: [Article] = []
     var errorMessage = ""
     
+    //API Key - Please get your free key at https://newsapi.org
+    private let apiKey = "debbf0c53d1a453d86c219dbde1932c1"
+    
     //MARK: - Setup Connection
     lazy var defaultSession: URLSession = {
         let config = URLSessionConfiguration.default
@@ -22,8 +25,8 @@ class NetworkService {
         return URLSession(configuration: config)
     }()
     
-    var dataTask: URLSessionDataTask?
-    let decoder = JSONDecoder()
+    private var dataTask: URLSessionDataTask?
+    private let decoder = JSONDecoder()
     
     
     //MARK: - Fetch Data
@@ -32,13 +35,12 @@ class NetworkService {
         
         guard var urlComponents = URLComponents(string: "https://newsapi.org/v2/top-headlines?") else { return }
         
-        urlComponents.query = "sources=\(newsSource)&\(pageSize)&apiKey=debbf0c53d1a453d86c219dbde1932c1"
+        urlComponents.query = "sources=\(newsSource)&\(pageSize)&apiKey=\(apiKey)"
         guard let url = urlComponents.url else { return }
         
         dataTask = defaultSession.dataTask(with: url) { data, response, error in
             defer { self.dataTask = nil }
             if let error = error {
-
                 self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
             } else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 self.updateResults(data)
@@ -51,7 +53,7 @@ class NetworkService {
     }
     
     
-    func updateResults(_ data: Data) {
+    private func updateResults(_ data: Data) {
         decoder.dateDecodingStrategy = .iso8601
         articles.removeAll()
         do {

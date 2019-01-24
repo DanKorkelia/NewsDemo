@@ -8,6 +8,9 @@
 
 import Foundation
 
+//Singleton For accessing UserDefaults storage
+let sharedUserDefaults = UserDefaults(suiteName: "group.sharingNews")
+
 extension UserDefaults {
     enum savedValue: String {
         case currentSource
